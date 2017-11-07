@@ -1,0 +1,10 @@
+<%= link_to 'Back to search', root_path %>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li>
+      <%= link_to 'Mark as Read', "/mark_as_read/#{tweet.id}", method: :patch %>
+      <label><%= tweet.text %></label>
+    </li>
+  <% end %>
+</ul>
