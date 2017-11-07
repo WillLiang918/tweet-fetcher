@@ -1,24 +1,13 @@
-# README
+# Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Include your twitter consumer_key and consumer_secret
+```app/services/twitter_service.rb```
+```
+def initialize(config={})
+    config[:consumer_key]    ||= 'YOUR CONSUMER KEY'
+    config[:consumer_secret] ||= 'YOUR CONSUMER SECRET'
 
-Things you may want to cover:
+    @client = Twitter::REST::Client.new(config)
+  end
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
